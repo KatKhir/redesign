@@ -9,17 +9,29 @@
     <link rel="stylesheet" href="frivillig.css">
 </head>
 
+
 <body>
-    <header> <a href="index.html">
+        <header>
+        <a href="index.html">
             <img src="images/logo.webp" alt="Logo" class="logo">
         </a>
-        <nav>
-            <ul>
-                <img src="images/menu.webp" alt="Logo" class="menu">
-
-            </ul>
-        </nav>
-    </header>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="event.html">Event</a></li>
+                    <li><a  href="medlem.html">Medlemskab</a></li>
+                    <li><a href="info.html">Info</a></li>
+                    <li><a class="active" href="frivillig.html">Frivillig</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </nav>
+        </header>
+    
     <div class="image-container">
         <img src="images/bildeee.webp" alt="klatrevegg1" class="klatrevegg1">
         <div class="text-box">Bliv Frivillig for NKK!</div>
@@ -166,11 +178,14 @@
             </ul>
         </nav>
     </footer>
+    <script>src="menu.js"</script>
     <script>
+
         function scrollToBilde() {
             const bilde = document.getElementById("bilde");
             if (bilde) {
                 bilde.scrollIntoView({ behavior: "smooth" });
+
             }
         }
     </script>

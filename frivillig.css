@@ -37,6 +37,7 @@ header {
   align-items: center;
   padding: 10px;
   background-color: #c5c5c3;
+  
 }
 .logo {
   width: 100px;
@@ -234,4 +235,5 @@ footer {
     grid-template-columns: 1fr;
     display: grid;
   }
+ 
 }
