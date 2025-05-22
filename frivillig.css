@@ -1,111 +1,76 @@
 * {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
+  padding:0;
+}
+/*-----orange på sidene-----*/
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: calc((100vw - 1100px) / 2); /* Tilpass til main sin max-width */
+  background-color: #FEAF4A;
+  z-index: 1;
+  pointer-events: none; /* Så du fortsatt kan klikke på innholdet */
+}
+body::before {
+  left: 0;
+}
+body::after {
+  right: 0;
+}
+/*-------skrift--------*/
+p {
+  line-height: 2;
+  font-size: 120%;
+}
+h1{
+  font-size: 120%;
+}
+h2 {
+  padding-bottom: 5%;
+}
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
-
-
+/*----- Header--------*/
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #FEAF4A;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #c5c5c3;
+  
 }
-.menu{
-  width: 50px;
-  padding-right: 40px;
-}
-.logo{
+.logo {
   width: 100px;
 }
 
-.container1, .container2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;  
-  gap: 20px;
-  width: 90%;
-  max-width: 1200px;
-  margin: 40px auto;
+
+.menu {
+  width: 50px;
+  padding-right: 40px;
 }
 
 
-.container1 img,
-.container2 .left-col img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
+/*----forsidebilde-----*/
 .image-container {
   position: relative; 
   width: 100%;
-}
 
-.intro-tekst{
-  margin-top: 90px;
-  margin-bottom: 100px;
-  font-size: medium;
-  text-align: center;
-  line-height: 40px;
-  margin-left: 150px;
-  margin-right: 150px;
 }
-
-.left-col, .right-col {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.left-col p, .right-col p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.konteiner3 {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  margin-top: 20px;
-}
-
 .klatrevegg1 {
   width: 100%;
   height: auto;
   object-fit: cover;
   max-height: 400px;
-}
-
-.container3 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  width: 90%;
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 40px 30px;
-  background-color: #f0f4f8;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.container3 h2:nth-of-type(1),
-.container3 p:nth-of-type(1) {
-  grid-column: 1;
-}
-
-.container3 p:nth-of-type(2),
-.text-box1-container {
-  grid-column: 2;
-}
-
-.container3 p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  filter: brightness(60%);
 }
 .text-box {
   position: absolute;
@@ -118,15 +83,77 @@ header {
   font-size: 50px; 
   font-weight: bold;
   border-radius: 5px; 
-   text-align: center;
+  text-align: center;
 }
 
+/*---- intro teksten----*/
+.intro-section {
+  position: relative;
+  background-image: url('images/tilintro.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -30px;
+}
+.intro-tekst {
+  padding: 30px 40px;
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 600px;
+  position: relative;
+  text-align: left;
+}
+
+/*-----Informerende tekster med bilder----*/
+.container1, .container2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+.container1 img,
+.container2 .left-col img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/*-----Se utvalg med knapp-----) */
+.container3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px 30px;
+  background-color: #f0f4f8;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.container3 h2:nth-of-type(1),
+.container3 p:nth-of-type(1) {
+  grid-column: 1;
+}
+.container3 p:nth-of-type(2),
+.text-box1-container {
+  grid-column: 2;
+}
+
+/*-----forsidebilde ved tabell----- */
 .text-box1-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.text-box1-container button {
+.text-box1-container button,
+.bg-button {
   background-color: #ffffff;
   color: #28a745;
   border: none;
@@ -136,7 +163,37 @@ header {
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+.bg-button {
+  background-image: url("images/knapp2.webp");
+  background-size: cover;
+  background-position: center;
+  color: #FEAF4A;
+  padding: 15px 30px;
+  font-size: 50px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.bg-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5); 
+  z-index: 0;
+  border-radius: 5px;
+}
+.bg-button:hover {
+  color: #FEAF4A;
+  background-color: #1d6bba;
+  background-blend-mode: overlay;
+}
 
+
+/*------Tabell-----*/
 .table {
   width: 90%;
   max-width: 1000px;
@@ -144,14 +201,19 @@ header {
   border: 2px solid #000000;
   border-collapse: collapse;
 }
-
 .table th, .table td {
   padding: 15px 20px;
   border: 1px solid #000000;
   vertical-align: top;
   text-align: left;
+  background-color:#f0f4f8;
+}
+.table td:first-child {
+  font-weight: bold;
 }
 
+
+/*----Footer og iconer-----*/
 footer {
   display: flex;
   justify-content: space-between;
@@ -159,83 +221,13 @@ footer {
   padding: 20px;
   background-color: #FEAF4A;
 }
-
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
+.logo1, .logo2 {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
 }
 
-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
-.bg-button {
-    background-image: url("images/gutt.webp");
-    background-size: cover;
-    background-position: center;
-    color: #ffffff;
-    border: none;
-    padding: 15px 30px;
-    font-size: 50px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.bg-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.5); 
-    z-index: 0;
-    border-radius: 5px;
-}
-
-.bg-button:hover {
-    color: #28a745;
-    background-color: #ffffff;
-    background-blend-mode: overlay;
-}
-
-
-
-
-body {
-  position: relative;
-  margin: 0;
-}
-
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 12px;
-  background-color: #FEAF4A
-  ;
-  z-index: +1; 
-}
-
-body::before {
-  left: 0;
-}
-
-body::after {
-  right: 0;
-}
-
-
+/*---------------------------*/
 @media (max-width: 768px) {
   .table th, .table td {
     display: block;
@@ -252,4 +244,5 @@ body::after {
     grid-template-columns: 1fr;
     display: grid;
   }
+ 
 }
