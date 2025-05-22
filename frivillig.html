@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>NKK Udvalg Diagram</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="frivillig.css">
@@ -23,18 +23,26 @@
     <div class="image-container">
         <img src="images/bildeee.webp" alt="klatrevegg1" class="klatrevegg1">
         <div class="text-box">Bliv Frivillig for NKK!</div>
-    </div>
-    <div class="intro-tekst ">
-        <h3>Vil du være med til at skabe den gode stemning, udvikle spændende klatreproblemer eller arrangere
-            uforglemmelige events?
-            Som frivillig i NKK har du mulighed for at blive en aktiv del af vores klubfællesskab, lære nye mennesker at
-            kende og
-            bidrage til et endnu bedre klatremiljø. Uanset om du er nybegynder eller erfaren klatrer, er der plads til
-            dig, og dine
-            idéer er altid velkomne!
 
-            Læs mere om, hvordan du kan engagere dig herunder.</h3>
+
+
     </div>
+    <div class="intro-section">
+
+        <div class="intro-tekst">
+            <p>Vil du være med til at skabe den gode stemning, udvikle spændende klatreproblemer eller arrangere
+                uforglemmelige events?</p>
+            <p>Som frivillig i NKK har du mulighed for at blive en aktiv del af vores klubfællesskab, lære nye mennesker
+                at
+                kende og bidrage til et endnu bedre klatremiljø. Uanset om du er nybegynder eller erfaren klatrer, er
+                der
+                plads til dig, og dine idéer er altid velkomne!</p>
+            <p><strong>Læs mere om, hvordan du kan engagere dig herunder.</strong></p>
+        </div>
+
+
+    </div>
+
 
     <div class="container1">
         <img src="images/salen.webp" alt="konteiner" class="konteiner1">
@@ -44,6 +52,7 @@
 
     <div class="container2">
         <div class="left-col">
+
             <h2>Bliv Træner for NKKs Hold!</h2>
             <p>Man kan blive træner for junior- og børneholdet, eller være med som træner af begynderholdet. Det er en
                 super god måde
@@ -80,26 +89,21 @@
             skrive til
             denne mail hvis du har en idé til et nyt udvalg.</p>
 
-        <button class="bg-button">Se udvalg</button>
+        <button class="bg-button" onclick="scrollToBilde()">Se udvalg</button>
         <h3>Kontakt: udvalg@nkk.dk</h3>
     </div>
 
 
 
 
-    <div class="image-container">
+    <div id="bilde" class="image-container">
+
         <img src="images/bildeee.webp" alt="klatrevegg1" class="klatrevegg1">
         <div class="text-box">Udvalg</div>
     </div>
     <table class="table">
-        <thead>
-            <tr>
-                <th></th>
 
-            </tr>
         </thead>
-
-
         <tr>
             <td>BaNanna:</td>
             <td>Ansvarlige for driften af Bananna-væggen.</td>
@@ -150,12 +154,26 @@
         </a>
         <nav>
             <ul>
-                <img src="images/instagram.webp" alt="Logo" class="logo">
+                <a href="https://www.facebook.com/groups/norrebroklatreklub/?locale=da_DK" target="_blank"
+                    rel="noopener noreferrer">
+                    <img src="images/4552607_facebook_logo_icon.webp" alt="Facebook" class="logo2">
+                </a>
+                <a href=https://www.instagram.com/noerrebroklatreklub/" target="_blank" rel="noopener noreferrer">
+                    <img src="images/insta.webp" alt="Instagram" class="logo2">
+
 
 
             </ul>
         </nav>
     </footer>
+    <script>
+        function scrollToBilde() {
+            const bilde = document.getElementById("bilde");
+            if (bilde) {
+                bilde.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    </script>
 </body>
 
 </html>
