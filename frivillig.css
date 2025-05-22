@@ -1,7 +1,7 @@
 * {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
+  padding:0;
 }
 /*-----orange på sidene-----*/
 body::before,
@@ -10,9 +10,10 @@ body::after {
   position: fixed;
   top: 0;
   bottom: 0;
-  width: 12px;
+  width: calc((100vw - 1100px) / 2); /* Tilpass til main sin max-width */
   background-color: #FEAF4A;
   z-index: 1;
+  pointer-events: none; /* Så du fortsatt kan klikke på innholdet */
 }
 body::before {
   left: 0;
@@ -23,11 +24,19 @@ body::after {
 /*-------skrift--------*/
 p {
   line-height: 2;
-  font-size: 128%;
+  font-size: 120%;
 }
-
+h1{
+  font-size: 120%;
+}
 h2 {
   padding-bottom: 5%;
+}
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 /*----- Header--------*/
