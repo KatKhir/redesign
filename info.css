@@ -11,6 +11,185 @@ img {
   display: block;
 }
 
+/***************************** FOOTER *****************************/
+footer {
+  /* justify-content: space-between;
+  align-items: center; */
+  padding: 20px;
+  background-color: rgb(197, 197, 195);
+  height: 16vh;
+}
+
+/******************************* MENU *******************************/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(197, 197, 195);
+}
+
+header .logo a {
+  color: black;
+  font-size: 2rem;
+  text-decoration: none;
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+}
+header .logo a:hover {
+  color: rgb(87, 92, 242);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 10px;
+  color: #333333;
+  text-decoration: none;
+  transition: color 0.3s;
+  text-align: end;
+}
+
+.menu a:hover {
+  color: rgb(242, 169, 60);
+}
+@media (max-width: 800px) {
+  header {
+    display: none;
+  }
+}
+
+/*******burger*******/
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #c5c5c3;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.logo {
+  width: 98px;
+  margin-block: 0;
+}
+.burger {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger .line {
+  width: 100%;
+  height: 2px;
+  background-color: #333333;
+  margin-bottom: 5px;
+  transition: 0.2s linear;
+}
+.burger {
+  display: none;
+}
+@media screen and (max-width: 800px) {
+  .menu {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    transition: 0.2s linear;
+  }
+
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+    transition: 0.15s linear;
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    transition: 0.2s linear;
+  }
+
+  nav.active .menu {
+    display: block;
+    background-color: #ffffff;
+    position: absolute;
+    top: 94px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+
+  nav.active .menu li {
+    margin: 10px 20px;
+  }
+
+  nav.active .menu a {
+    font-size: 24px;
+  }
+}
+
+a.active {
+  color: rgb(31, 81, 243);
+}
+/*******custom properties******/
+html {
+  --primary-b-color: #f2a93c;
+}
+/*******fonts*******/
+.aleo {
+  font-family: "Aleo", serif;
+  font-style: normal;
+}
+p {
+  font-family: "Aleo", serif;
+  font-size: 15px;
+  line-height: 20px;
+  color: black;
+}
+
+li {
+  font-family: "Aleo", serif;
+  font-size: 15px;
+  color: black;
+  line-height: 25px;
+}
+
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.oswald {
+  font-family: "Oswald", sans-serif;
+  font-style: normal;
+}
+
 /********************************************** MOBIL ************************************************/
 
 /************* IMG *************/
@@ -45,7 +224,7 @@ img {
 }
 
 .bottom_margin {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .kontakt {
@@ -115,6 +294,14 @@ img {
   margin-bottom: 5px;
 }
 
+.tekst_margin_2 {
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 5px;
+  color: white;
+  font-size: larger;
+}
+
 .tekst_bottom_h2 {
   margin-bottom: 5px;
 }
@@ -146,19 +333,24 @@ img {
   margin-top: 20px;
 }
 
-.h2_læs_om_margin {
-  margin-bottom: 10px;
-}
-
 h2 {
   color: white;
-  margin-top: 5px;
+  font-family: "Oswald", sans-serif;
+  margin-top: 30px;
   margin-left: 15px;
   margin-right: 15px;
 }
 
+.h2_scroll {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
 h1 {
   font-size: xxx-large;
+  font-family: "Bebas Neue", sans-serif;
+  color: black;
+  margin-bottom: 10px;
 }
 /************* BAGGRUNDSBILLEDE ***********/
 
@@ -174,7 +366,7 @@ main {
   margin: 0 auto;
 }
 /************************************************* DESKTOP *********************************************************/
-@media (min-width: 700px) {
+@media (min-width: 800px) {
   .billede1 {
     display: block;
   }
