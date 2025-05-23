@@ -1,8 +1,11 @@
+/* Global reset */
 * {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding:0;
+  padding: 0;
 }
+
+
 /*-----orange på sidene-----*/
 body::before,
 body::after {
@@ -10,28 +13,85 @@ body::after {
   position: fixed;
   top: 0;
   bottom: 0;
-  width: calc((100vw - 1100px) / 2); /* Tilpass til main sin max-width */
+  width: calc((100vw - 1100px) / 2);
   background-color: #FEAF4A;
   z-index: 1;
-  pointer-events: none; /* Så du fortsatt kan klikke på innholdet */
+  pointer-events: none;
 }
-body::before {
-  left: 0;
+body::before { left: 0; }
+body::after { right: 0; }
+
+/******* Fonts *******/
+.aleo, p, li {
+  font-family: "Aleo", serif;
+  font-size: 15px;
+  color: black;
+  line-height: 25px;
 }
-body::after {
-  right: 0;
+.table {
+  width: 70%;
+  max-width: 800px;
+  margin: 30px auto;
+  border: 2px solid #000000;
+  border-collapse: collapse;
 }
-/*-------skrift--------*/
 p {
-  line-height: 2;
-  font-size: 120%;
+  margin-top: 8px;
+  margin-bottom: 40px;
 }
-h1{
-  font-size: 120%;
+.text-box {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+}
+.text-box h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  color: black;
+  font-size: 2.5rem;
+  margin: 0; 
+}
+h1 {
+  font-size: 2.5rem;
+}
+.oswald, h2 {
+  font-family: "Oswald", sans-serif;
+  font-style: normal;
+  color: black;
 }
 h2 {
-  padding-bottom: 5%;
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
+
+/*logo */
+
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #c5c5c3;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+header .logo a {
+  color: black;
+  font-size: 2rem;
+  text-decoration: none;
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+}
+header .logo a:hover {
+  color: rgb(87, 92, 242);
+}
+
+/* -----Main----- */
 main {
   max-width: 1100px;
   margin: 0 auto;
@@ -39,31 +99,10 @@ main {
   z-index: 2;
 }
 
-/*----- Header--------*/
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: #c5c5c3;
-  
-}
-.logo {
-  width: 100px;
-}
-
-
-.menu {
-  width: 50px;
-  padding-right: 40px;
-}
-
-
-/*----forsidebilde-----*/
+/*-----forsidebilde-----*/
 .image-container {
   position: relative; 
   width: 100%;
-
 }
 .klatrevegg1 {
   width: 100%;
@@ -86,7 +125,7 @@ header {
   text-align: center;
 }
 
-/*---- intro teksten----*/
+/*---- intro teksten ----*/
 .intro-section {
   position: relative;
   background-image: url('images/tilintro.svg');
@@ -104,14 +143,13 @@ header {
   font-size: 14px;
   line-height: 1.6;
   max-width: 600px;
-  position: relative;
   text-align: left;
 }
 
-/*-----Informerende tekster med bilder----*/
+/* Informerende tekster med bilder */
 .container1, .container2 {
   display: grid;
-  grid-template-columns: 1fr 1fr;  
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
   width: 90%;
   max-width: 1200px;
@@ -124,7 +162,7 @@ header {
   object-fit: cover;
 }
 
-/*-----Se utvalg med knapp-----) */
+/* Se utvalg med knapp */
 .container3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -146,7 +184,7 @@ header {
   grid-column: 2;
 }
 
-/*-----forsidebilde ved tabell----- */
+/* Knapp */
 .text-box1-container {
   display: flex;
   flex-direction: column;
@@ -192,8 +230,7 @@ header {
   background-blend-mode: overlay;
 }
 
-
-/*------Tabell-----*/
+/* Tabell */
 .table {
   width: 90%;
   max-width: 1000px;
@@ -212,22 +249,132 @@ header {
   font-weight: bold;
 }
 
-
-/*----Footer og iconer-----*/
-footer {
+/* Header og meny */
+header {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #FEAF4A;
+  background-color: #c5c5c3;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
-.logo1, .logo2 {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
+nav {
+  display: flex;
+  align-items: center;
+}
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu li {
+  margin-right: 20px;
+}
+.menu li:last-child {
+  margin-right: 0;
+}
+.menu a {
+  display: block;
+  padding: 10px;
+  color: #333333;
+  text-decoration: none;
+  transition: color 0.3s;
+  text-align: end;
+}
+.menu a:hover {
+  color: rgb(242, 169, 60);
+}
+a.active {
+  color: rgb(31, 81, 243);
+}
+.logo {
+  width: 98px;
+  margin-block: 0;
 }
 
-/*---------------------------*/
+/******* Burger Menu *******/
+.burger {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  display: none;
+}
+.burger .line {
+  width: 100%;
+  height: 2px;
+  background-color: #333333;
+  margin-bottom: 5px;
+  transition: 0.2s linear;
+}
+
+/* Responsive */
+@media screen and (max-width: 800px) {
+   /* header {
+    display: none;
+  } */
+  
+  .menu {
+    display: none;
+  } 
+  .burger {
+    display: block;
+  }
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+  }
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  nav.active .menu {
+    display: block;
+    background-color: #ffffff;
+    position: absolute;
+    top: 94px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+  nav.active .menu li {
+    margin: 10px 20px;
+  }
+  nav.active .menu a {
+    font-size: 24px;
+  }
+}
+
+/* Footer */
+footer {
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  left: 50%;
+  right: 50%;
+  padding: 20px;
+  background-color: rgb(197, 197, 195);
+  height: 18vh;
+  z-index: 2;
+  position: relative;
+}
+footer img {
+  display: block;
+  width: 100px;
+  height: auto;
+}
+
+/******* Custom properties *******/
+html {
+  --primary-b-color: #f2a93c;
+}
+
+/* Responsive table adjustments */
 @media (max-width: 768px) {
   .table th, .table td {
     display: block;
@@ -236,13 +383,11 @@ footer {
     padding: 15px 10px;
   }
   .text-box {
-    font-size: 24px; 
-    padding: 15px 30px; 
-    max-width: 90%; 
+    font-size: 24px;
+    padding: 15px 30px;
+    max-width: 90%;
   }
   .container1, .container2, .container3 {
     grid-template-columns: 1fr;
-    display: grid;
   }
- 
 }
